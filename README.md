@@ -22,3 +22,54 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+### テーブル設計		
+		
+## users テーブル
+		
+| Column   | Type   | Options      |
+| -------  | -----  | ------------ |
+| nickname | string | null: false  |
+| email    | string | null: false  |
+| password | string | null: false  |
+		
+### Association
+		
+-has_many :items
+-has_many :comments
+-has_one :buyer
+		
+## itemsテーブル
+		
+| Column   | Type   | Options      |
+| -------  | -----  | ------------ |
+| name     | string | null: false  |
+| image    | string | null: false  |
+| text     | string | null: false  |
+		
+### Association
+		
+-belongs_to:user
+-has_many:comments
+-has_one:buyer
+		
+### commentsテーブル
+		
+| Column   | Type   | Options      |
+| -------  | -----  | ------------ |
+| text     | string | null: false  |
+		
+		
+### Association
+-belongs_to:user
+-belongs_to:item
+		
+### buyerテーブル
+		
+| Column   | Type   | Options      |
+| -------  | -----  | ------------ |
+| adress   | string | null: false  |
+		
+### Association
+-belongs_to:user
+-belongs_to:item
