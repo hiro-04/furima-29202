@@ -27,11 +27,15 @@ Things you may want to cover:
 		
 ## users テーブル
 		
-| Column   | Type   | Options      |
-| -------  | -----  | ------------ |
-| nickname | string | null: false  |
-| email    | string | null: false  |
-| password | string | null: false  |
+| Column                | Type   | Options      |
+| -------               | -----  | ------------ |
+| first_name            | string | null: false  |
+| family_name           | string | null: false  |
+| first_name(フリガナ)   | string | null: false  |
+| family_name(フリガナ)  | string | null: false  |
+| email                 | string | null: false  |
+| password              | string | null: false  |
+| birthday              | string | null: false  |
 		
 ### Association
 		
@@ -41,12 +45,20 @@ Things you may want to cover:
 		
 ## itemsテーブル
 		
-| Column   | Type   | Options      |
-| -------  | -----  | ------------ |
-| name     | string | null: false  |
-| image    | string | null: false  |
-| text     | string | null: false  |
-		
+| Column       | Type   | Options      |
+| -------      | -----  | ------------ |
+| title        | string | null: false  |
+| image        | string | null: false  |
+| detail       | string | null: false  |
+| category     | string | null: false  |
+| status       | string | null: false  |
+| burden       | string | null: false  |
+| area         | string | null: false  |
+| days         | string | null: false  |
+| price        | string | null: false  |
+| tax          | string | null: false  |
+| benefit      | string | null: false  |
+
 ### Association
 		
 -belongs_to:user
@@ -66,10 +78,18 @@ Things you may want to cover:
 		
 ### buyerテーブル
 		
-| Column   | Type   | Options      |
-| -------  | -----  | ------------ |
-| adress   | string | null: false  |
+| Column        | Type   | Options      |
+| -------       | -----  | ------------ |
+| prefectures   | string | null: false  |
+| city          | string | null: false  |
 		
 ### Association
 -belongs_to:user
 -belongs_to:item
+-has_one:transaction
+
+### transactionテーブル
+
+-belongs_to:user
+-belongs_to:item
+-belongs_to:buyer
