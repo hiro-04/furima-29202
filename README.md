@@ -67,10 +67,11 @@ Things you may want to cover:
 		
 ### commentsテーブル
 		
-| Column   | Type   | Options      |
-| -------  | -----  | ------------ |
-| text     | string | null: false  |
-		
+| Column      | Type   | Options      |
+| -------     | -----  | ------------ |
+| text        | string | null: false  |
+| user_id     | string | null: false  |
+| item_id     | string | null: false  |		
 		
 ### Association
 -belongs_to:user
@@ -80,15 +81,21 @@ Things you may want to cover:
 		
 | Column        | Type   | Options      |
 | -------       | -----  | ------------ |
-| prefectures   | string | null: false  |
-| city          | string | null: false  |
+| user_id   | string | null: false  |
+| item_id          | string | null: false  |
 		
 ### Association
 -belongs_to:user
 -belongs_to:item
--has_one:transaction
+-has_one:order
 
-### transactionテーブル
+### orderテーブル
+
+| Column            | Type   | Options      |
+| -------           | -----  | ------------ |
+| prefectures       | string | null: false  |
+| city              | string | null: false  |
+| buyer_id          | string | null: false  |
 
 -belongs_to:user
 -belongs_to:item
