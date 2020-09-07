@@ -31,25 +31,24 @@ Things you may want to cover:
 | -------               | -----  | ------------ |
 | first_name            | string | null: false  |
 | family_name           | string | null: false  |
-| first_name(フリガナ)   | string | null: false  |
-| family_name(フリガナ)  | string | null: false  |
+| first_name_kana       | string | null: false  |
+| family_name_kana      | string | null: false  |
 | email                 | string | null: false  |
 | password              | string | null: false  |
-| birthday              | string | null: false  |
+| birthday              | date   | null: false  |
 		
 ### Association
 		
 -has_many :items
 -has_many :comments
--has_one :buyer
+-has_many :buyer
 		
 ## itemsテーブル
 		
 | Column       | Type   | Options      |
 | -------      | -----  | ------------ |
 | title        | string | null: false  |
-| image        | string | null: false  |
-| detail       | string | null: false  |
+| detail       | text   | null: false  |
 | category     | string | null: false  |
 | status       | string | null: false  |
 | burden       | string | null: false  |
@@ -67,11 +66,11 @@ Things you may want to cover:
 		
 ### commentsテーブル
 		
-| Column      | Type   | Options      |
-| -------     | -----  | ------------ |
-| text        | string | null: false  |
-| user_id     | string | null: false  |
-| item_id     | string | null: false  |		
+| Column      | Type       | Options                         |
+| -------     | -----      | ------------                    |
+| text        | string     | null: false                     |
+| user_id     | references | null: false, foreign_key: true  |
+| item_id     | references | null: false, foreign_key: true  |
 		
 ### Association
 -belongs_to:user
@@ -79,10 +78,10 @@ Things you may want to cover:
 		
 ### buyerテーブル
 		
-| Column        | Type   | Options      |
-| -------       | -----  | ------------ |
-| user_id   | string | null: false  |
-| item_id          | string | null: false  |
+| Column           | Type        | Options      |
+| -------          | -----       | ------------ |
+| user_id          | references  | null: false  |
+| item_id          | references  | null: false  |
 		
 ### Association
 -belongs_to:user
@@ -91,12 +90,14 @@ Things you may want to cover:
 
 ### orderテーブル
 
-| Column            | Type   | Options      |
-| -------           | -----  | ------------ |
-| prefectures       | string | null: false  |
-| city              | string | null: false  |
-| buyer_id          | string | null: false  |
+| Column                    | Type        | Options                          |
+| -------                   | -----       | ------------                     |
+| prefectures               | integer     | null: false                      |
+| city                      | integer     | null: false                      |
+| house_number              | integer     | null: false                      |
+| building                  | integer     | null: false                      |
+| telephone                 | integer     | null: false                      |
+| postal_code               | integer     | null: false                      |
+| buyer_id                  | references  | null: false, foreign_key: true   |
 
--belongs_to:user
--belongs_to:item
 -belongs_to:buyer
