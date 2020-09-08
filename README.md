@@ -45,16 +45,17 @@ Things you may want to cover:
 		
 ## itemsテーブル
 		
-| Column       | Type    | Options      |
-| -------      | -----   | ------------ |
-| title        | string  | null: false  |
-| detail       | text    | null: false  |
-| category     | integer | null: false  |
-| status       | integer | null: false  |
-| burden       | integer | null: false  |
-| area         | integer | null: false  |
-| days         | integer | null: false  |
-| price        | integer | null: false  |
+| Column       | Type       | Options                           |
+| -------      | -----      | ------------                      |
+| title        | string     | null: false                       |
+| detail       | text       | null: false                       |
+| category     | integer    | null: false                       |
+| status       | integer    | null: false                       |
+| burden       | integer    | null: false                       |
+| area         | integer    | null: false                       |
+| days         | integer    | null: false                       |
+| price        | integer    | null: false                       |
+| user         | references | null: false, foreign_key: true    |
 # | tax          | string  | null: false  |
 # | benefit      | string  | null: false  |
 
@@ -66,11 +67,11 @@ Things you may want to cover:
 		
 ### commentsテーブル
 		
-| Column      | Type       | Options                      
-| -------     | -----      | ------------                   
-| text        | string     | null: false                     
-| user        | references | null: false, foreign_key: true  
-| item        | references | null: false, foreign_key: true  
+| Column      | Type       | Options                         |
+| -------     | -----      | ------------                    |
+| text        | string     | null: false                     |
+| user        | references | null: false, foreign_key: true  |
+| item        | references | null: false, foreign_key: true  |  
 		
 ### Association
 -belongs_to:user
@@ -78,10 +79,10 @@ Things you may want to cover:
 		
 ### buyerテーブル
 		
-| Column           | Type        | Options      |
-| -------          | -----       | ------------ |
-| user             | references  | null: false  |
-| item             | references  | null: false  |
+| Column           | Type        | Options                         |
+| -------          | -----       | ------------                    |
+| user             | references  | null: false  foreign_key: true  |
+| item             | references  | null: false  foreign_key: true  |
 		
 ### Association
 -belongs_to:user
