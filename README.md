@@ -93,11 +93,11 @@ Things you may want to cover:
 | Column                    | Type             | Options                          |
 | -------                   | -----            | ------------                     |
 | prefectures               | integer          | null: false                      |
-| city                      | integer          | null: false                      |
-| house_number              | integer          | null: false                      |
-| building                  | integer          |                    |
-| telephone                 | integer          | null: false                      |
-| postal_code               | integer          | null: false                      |
+| city                      | string           | null: false                      |
+| house_number              | string           | null: false                      |
+| building                  | string           |                    |
+| telephone                 | string           | null: false                      |
+| postal_code               | string           | null: false                      |
 | buyer                     | references       | null: false, foreign_key: true   |
 
 -belongs_to:buyer
