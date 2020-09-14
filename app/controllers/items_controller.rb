@@ -1,9 +1,8 @@
 class ItemsController < ApplicationController
-  #before_acition :set_item, only: [:edit, :show]
+  #before_acition :set_item, only: [:edit]
 
   def index
-    @items = Item.all
-   # @items = Item.order("created_at DESC")
+   @items = Item.order("created_at DESC")
   end
 
   def new
