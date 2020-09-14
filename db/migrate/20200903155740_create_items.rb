@@ -1,17 +1,16 @@
 class CreateItems < ActiveRecord::Migration[6.0]
   def change
     create_table :items do |t|
-      t.string :title,                             null: false, default: ""
-      t.string :content,                            null: false, default: ""
-      t.string :image,                             null: false, default: ""
-      t.string :category,                          null: false, default: ""
-      t.string :status,                            null: false, default: ""
-      t.string :burden,                            null: false, default: ""
-      t.string :area,                              null: false, default: ""
-      t.string :days,                              null: false, default: ""
-      t.string :price,                             null: false, default: ""
-      t.string :tax,                               null: false, default: ""
-      t.string :benefit,                           null: false, default: ""
+      t.string  :title,                                null: false, default: ""
+      t.text    :content,                              null: false
+      t.integer :category_id,                          null: false
+      t.integer :status_id,                               null: false
+      t.integer :burden_id,                               null: false
+      t.integer :area_id,                                 null: false
+      t.integer :days_id,                                 null: false
+      t.integer :price,                                null: false
+      t.references :user,                             null: false, foreign_key: true
+
       t.timestamps
     end
   end

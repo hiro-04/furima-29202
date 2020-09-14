@@ -23,7 +23,7 @@
 | Column       | Type       | Options                           |
 | -------      | -----      | ------------                      |
 | title        | string     | null: false                       |
-| detail       | text       | null: false                       |
+| content      | text       | null: false                       |
 | category     | integer    | null: false                       |
 | status       | integer    | null: false                       |
 | burden       | integer    | null: false                       |
