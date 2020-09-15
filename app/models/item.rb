@@ -19,5 +19,4 @@ class Item < ApplicationRecord
   validates :category_id, :status_id, :burden_id, :area_id, :days_id, numericality: { other_than: 1 } 
 
 
-
 end
