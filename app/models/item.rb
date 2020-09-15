@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   belongs_to:user
 
   validates :title, :image, presence: true
-  validates :content, presence: true
+  validates :content, presence: true, unless: :was_attached?
   validates :status, presence: true
   validates :burden, presence: true
   validates :area, presence: true
@@ -18,6 +18,8 @@ class Item < ApplicationRecord
   validates :category, presence: true
   validates :category_id, :status_id, :burden_id, :area_id, :days_id, numericality: { other_than: 1 } 
 
-
+  def was_attached?
+    self.image.attached?
+  end
 
 end
