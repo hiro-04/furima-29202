@@ -36,10 +36,10 @@
 ### Association
 		
 -belongs_to:user
--has_one:buyer
+-has_one:order
 	
 		
-### buyerテーブル
+### orderテーブル
 		
 | Column           | Type        | Options                         |
 | -------          | -----       | ------------                    |
@@ -49,9 +49,9 @@
 ### Association
 -belongs_to:user
 -belongs_to:item
--has_one:order
+-has_one:address
 
-### orderテーブル
+### Addressテーブル
 
 | Column                    | Type             | Options                          |
 | -------                   | -----            | ------------                     |
@@ -61,6 +61,6 @@
 | building                  | string           |                    |
 | telephone                 | string           | null: false                      |
 | postal_code               | string           | null: false                      |
-| buyer                     | references       | null: false, foreign_key: true   |
+| order                     | references       | null: false, foreign_key: true   |
 
--belongs_to:buyer
+-belongs_to:order
