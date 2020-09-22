@@ -5,8 +5,6 @@ class OrdersController < ApplicationController
     @order = OrderInfo.new
   end
 
-  def show
-  end
 
   def create
     @order = OrderInfo.new(order_params)

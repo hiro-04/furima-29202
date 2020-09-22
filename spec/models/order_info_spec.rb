@@ -51,6 +51,11 @@ RSpec.describe OrderInfo, type: :model do
         @order_info.valid?
         expect(@order_info.errors.full_messages).to include("House number can't be blank")
       end
+      it "tokenがないと商品は保存できない" do
+        @order_info.token = nil
+        @order_info.valid?
+        expect(@order_info.errors.full_messages).to include("Token can't be blank")
+      end
     end
   end
 end
