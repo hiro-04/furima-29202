@@ -4,6 +4,9 @@ class OrdersController < ApplicationController
 
   def index
     @order = OrderInfo.new
+    if user_signed_in? && current_user.id == @item.user_id
+      return redirect_to root_path
+    end
   end
 
 
